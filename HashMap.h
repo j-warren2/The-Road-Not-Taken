@@ -7,7 +7,7 @@
 #include <list>
 #include <utility>
 
-class Hashmap {
+class HashMap {
     int tableSize;
     std::vector<std::list<std::pair<std::string, int>>> table;
     int hash(std::string& key);
