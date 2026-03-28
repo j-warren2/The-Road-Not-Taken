@@ -9,7 +9,9 @@
 
 class HashMap {
     int tableSize;
+    int totalEntries;
     std::vector<std::list<std::pair<std::string, int>>> table;
+    std::vector<std::string> allStoredPaths;
     int hash(std::string& key);
 
 public:
