@@ -1,9 +1,7 @@
-//
-// Created by GVZ on 3/26/2026.
-//
-
 #include "HashMap.h"
+#include <iostream>
 #include <stdexcept>
+using namespace std;
 
 // Constructor
 HashMap::HashMap(int size) {
