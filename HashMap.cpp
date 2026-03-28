@@ -187,3 +187,8 @@ void HashMap::collectVisualData(vector<pair<string, int>>& ans) {
         }
     }
 }
+
+// Returns the total amount of users
+int HashMap::getTotalUsers() {
+    return totalEntries;
+}
