@@ -101,3 +101,37 @@ int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
     }
     return sharedChoices;
 }
+
+// For each step in the path, counts how many stored users made the same choice at that step.
+void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
+
+    // If the map is empty, print error message and return
+    if (totalEntries == 0) {
+        cout << "No paths stored in HashMap yet.\n";
+        return;
+    }
+
+    // If the path doesn't exist, print error message and return
+    if (!decisionPathExists(currentUserPath)) {
+        cout << "Path not found in HashMap.\n";
+        return;
+    }
+
+    cout << "\nPer-choice statistics for path: " << currentUserPath << "\n";
+
+    for (int i = 0; i < (int)currentUserPath.length(); i++) {
+        int matchCount = 0;
+
+        // Scan every stored path
+        for (const string& stored : allStoredPaths) {
+            if ((int)stored.length() > i && stored[i] == currentUserPath[i]) {
+                matchCount++;
+            }
+        }
+
+        double percentage= (double)matchCount / totalEntries * 100;
+        cout << "Choice " << (i + 1) << " ('" << currentUserPath[i] << "'): "
+             << matchCount << " users ("
+             << (int)percentage << "%) made the same choice\n";
+    }
+}
