@@ -23,12 +23,12 @@ class Trie {
 private:
     TrieNode* storyRoot;
     vector<string> allStoredPaths;
-
     void traverseForVisual(TrieNode* currentNode, string pathSoFar, vector<PathNode>& result);
+    void deleteNodes(TrieNode* node);
 
 public:
     Trie();
-
+    ~Trie();
     void insertDecisionPath(const string& decisionPath);
     bool decisionPathExists(const string& decisionPath);
     int countSharedChoices(const string& pathA, const string& pathB);
