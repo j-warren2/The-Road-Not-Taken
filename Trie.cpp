@@ -10,6 +10,16 @@ void Trie::traverseForVisual(TrieNode* currentNode, string pathSoFar, vector<Pat
 Trie::Trie() {
     storyRoot = new TrieNode();
 }
+void Trie::deleteNodes(TrieNode* node) {
+    for (auto& [choice, child] : node->nextChoices) {
+        deleteNodes(child);
+    }
+    delete node;
+}
+
+Trie::~Trie() {
+    deleteNodes(storyRoot);
+}
 
 // time complexity: O(m) where m = length of the decision path string
 // walks the path once, creating nodes where needed
