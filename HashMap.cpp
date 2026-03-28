@@ -135,3 +135,46 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
              << (int)percentage << "%) made the same choice\n";
     }
 }
+
+// Finds most and least similar paths
+void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
+
+    // Needs at least 2 paths to make a comparison
+    if (allStoredPaths.size() <= 1) {
+        cout << "Not enough paths stored to compare.\n";
+        return;
+    }
+
+    // Declare variables
+    string mostSimilarPath= "";
+    string leastSimilarPath= "";
+    int highestScore= -1;
+    int lowestScore= (int)currentUserPath.length() + 1;
+
+    // Loop through every stored path and compare it to the user's
+    for (const string& stored : allStoredPaths) {
+        // Skip if the stored path is the current user's path
+        if (stored == currentUserPath) {
+            continue;
+        }
+
+        // Count the shared choices between paths
+        int score= countSharedChoices(currentUserPath, stored);
+
+        // Update the most and least similar paths 
+        if (score > highestScore) {
+            highestScore= score;
+            mostSimilarPath= stored;
+        }
+        if (score < lowestScore) {
+            lowestScore      = score;
+            leastSimilarPath = stored;
+        }
+    }
+
+    // Prints the most similar and least similar
+    cout << "\nMost similar path:  " << mostSimilarPath
+         << " (" << highestScore << " shared choices)\n";
+    cout << "Least similar path: " << leastSimilarPath
+         << " (" << lowestScore << " shared choices)\n";
+}
