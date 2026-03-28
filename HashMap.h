@@ -21,6 +21,9 @@ public:
     // Inserts a decision path onto the map
     void insertDecisionPath(std::string& decisionPath);
 
+    // Checks if a path exists
+    bool decisionPathExists(const std::string& decisionPath);
+
     // Gets the number of users who took a certain path
     int getCount(const std::string& key);
 
