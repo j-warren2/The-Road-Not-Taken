@@ -32,6 +32,9 @@ public:
 
     // Compares paths and scores similarities
     int countSharedChoices(const std::string& pathA, const std::string& pathB);
+
+    // Compares how many stored users made the same choice at each step.
+    void printPerChoiceStatistics(const std::string& currentUserPath);
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
