@@ -12,7 +12,7 @@ class HashMap {
     int totalEntries;
     std::vector<std::list<std::pair<std::string, int>>> table;
     std::vector<std::string> allStoredPaths;
-    int hash(std::string& key);
+    int hash(std::string& key) const;
 
 public:
     // Constructor
