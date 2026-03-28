@@ -25,7 +25,7 @@ public:
     bool decisionPathExists(const std::string& decisionPath);
 
     // Gets the number of users who took a certain path
-    int getCount(const std::string& key);
+    int getPathCount(const std::string& decisionPath);
 
     // Removes a path entirely
     void removeDecisionPath(const std::string& decisionPath);
