@@ -12,6 +12,7 @@ HashMap::HashMap(int size) {
 }
 
 // Converts inputted path into a value to store onto the table
+// O(n) time complexity, due to loop
 int HashMap::hash(std::string& key) {
     int value= 0;
     for(char c : key) {
@@ -21,6 +22,7 @@ int HashMap::hash(std::string& key) {
 }
 
 // Insertion Function
+// O(n + k) time complexity, due to hashing and loop
 void HashMap::insertDecisionPath(string& decisionPath) {
     int index = hash(decisionPath);
     for (auto& entry : table[index]) {
@@ -43,6 +45,7 @@ void HashMap::insertDecisionPath(string& decisionPath) {
 }
 
 // Checks if a path is stored in the map
+// O(n + k) time complexity, due to hashing and loop
 bool HashMap::decisionPathExists(const string& decisionPath){
     int index= hash(decisionPath);
     for (const auto& entry : table[index]) {
@@ -53,6 +56,7 @@ bool HashMap::decisionPathExists(const string& decisionPath){
 }
 
 // Returns how many users took a path
+// O(n + k) time complexity, due to hashing and loop
 int HashMap::getPathCount(const string& decisionPath) {
     int index= hash(decisionPath);
     for (const auto& entry : table[index]) {
@@ -65,6 +69,7 @@ int HashMap::getPathCount(const string& decisionPath) {
 }
 
 // Removes path from the map
+// O(n + k) time complexity, due to hashing and loop
 void HashMap::removeDecisionPath(const std::string& decisionPath) {
     int index= hash(decisionPath);
     auto& link= table[index];
@@ -83,6 +88,7 @@ void HashMap::removeDecisionPath(const std::string& decisionPath) {
 }
 
 // Compares paths and scores similarities 
+// O(n) time complexity, due to loop
 int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
     int sharedChoices= 0;
     // Finds whatever path is shorter so it doesn't go out of range 
@@ -102,7 +108,8 @@ int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
     return sharedChoices;
 }
 
-// For each step in the path, counts how many stored users made the same choice at that step.
+// For each step in the path, counts how many stored users made the same choice at that step
+// O(n * m) time complexity, due to nested for loop
 void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 
     // If the map is empty, print error message and return
@@ -137,6 +144,7 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 }
 
 // Finds most and least similar paths
+// O(n * m) time complexity, due to nested for loops
 void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
 
     // Needs at least 2 paths to make a comparison
@@ -180,6 +188,7 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
 }
 
 // Puts all paths into a vector
+// O(n + k) time complexity, due to nested for loops but not running completely through every time
 void HashMap::collectVisualData(vector<pair<string, int>>& ans) {
     for (auto& bucket : table) {
         for (auto& entry : bucket) {
@@ -189,6 +198,7 @@ void HashMap::collectVisualData(vector<pair<string, int>>& ans) {
 }
 
 // Returns the total amount of users
+// O(1) time complexity, just returns variable
 int HashMap::getTotalUsers() {
     return totalEntries;
 }
