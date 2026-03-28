@@ -63,3 +63,20 @@ int HashMap::getPathCount(const string& decisionPath) {
     // Returns 0 path was not found
     return 0;
 }
+
+void HashMap::removeDecisionPath(const std::string& decisionPath) {
+    int index= hash(decisionPath);
+    auto& link= table[index];
+
+    // i is the iterator
+    for (auto i= link.begin(); i != link.end(); i++) {
+        // If the iterator matches the decision path
+        if (i->first == decisionPath) {
+            // Erase what i is pointing at
+            link.erase(i);
+            // Decrease total entries
+            totalEntries--;
+            return;
+        }
+    }
+}
