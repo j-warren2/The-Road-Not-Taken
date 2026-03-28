@@ -51,3 +51,15 @@ bool HashMap::decisionPathExists(const string& decisionPath){
     }
     return false;
 }
+
+// Returns how many users took a path
+int HashMap::getPathCount(const string& decisionPath) {
+    int index= hash(decisionPath);
+    for (const auto& entry : table[index]) {
+        if (entry.first == decisionPath)
+            return entry.second;
+    }
+
+    // Returns 0 path was not found
+    return 0;
+}
