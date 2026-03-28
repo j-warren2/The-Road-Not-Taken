@@ -13,7 +13,7 @@ HashMap::HashMap(int size) {
 
 // Converts inputted path into a value to store onto the table
 // O(n) time complexity, due to loop
-int HashMap::hash(std::string& key)const {
+int HashMap::hash(const std::string& key)const {
     int value= 0;
     for(char c : key) {
         value = (value * 31 + c) % tableSize;
