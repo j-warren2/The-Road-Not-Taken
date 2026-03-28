@@ -5,7 +5,9 @@ using namespace std;
 
 // Constructor
 HashMap::HashMap(int size) {
+    // Number of buckets
     tableSize=size;
+    // Create a table
     table.resize(tableSize);
 }
 
