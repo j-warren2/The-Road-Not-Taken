@@ -64,6 +64,7 @@ int HashMap::getPathCount(const string& decisionPath) {
     return 0;
 }
 
+// Removes path from the map
 void HashMap::removeDecisionPath(const std::string& decisionPath) {
     int index= hash(decisionPath);
     auto& link= table[index];
