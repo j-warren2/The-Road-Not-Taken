@@ -29,6 +29,9 @@ public:
 
     // Removes a path entirely
     void removeDecisionPath(const std::string& decisionPath);
+
+    // Compares paths and scores similarities
+    int countSharedChoices(const std::string& pathA, const std::string& pathB);
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
