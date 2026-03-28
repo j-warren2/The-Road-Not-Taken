@@ -32,6 +32,17 @@ string getPlayerChoice(char maxChoice) {
     }
 }
 
+// Helper function to generate ONE random choice.
+string getRandomChoice(int numOptions) {
+    // Get a random number between 0 and (numOptions - 1)
+    int randomNumber = rand() % numOptions;
+
+    // Shift it to a character (Ex: 'A' + 0 would be 'A' and 'A' + 1 would be 'B', etc.)
+    char randomChoice = 'A' + randomNumber;
+
+    return string(1, randomChoice);
+}
+
 int main() {
     // Outer Key: Player ID | Inner Key: Chapter | Inner Value: Choice Made
     map<string, map<string, string>> gameDatabase;
