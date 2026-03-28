@@ -19,3 +19,25 @@ int HashMap::hash(std::string& key) {
     }
     return value;
 }
+
+// Insertion Function
+void HashMap::insertDecisionPath(string& decisionPath) {
+    int index = hash(decisionPath);
+    for (auto& entry : table[index]) {
+
+        // If path exists, increment count
+        if (entry.first == decisionPath) {
+            entry.second++;
+            // Tracks every insertion
+            allStoredPaths.push_back(decisionPath);
+            totalEntries++;
+            return;
+        }
+    }
+
+    // If it does not exist, add a new entry starting at 1
+    table[index].push_back(std::make_pair(decisionPath, 1));
+    // Tracks every insertion
+    allStoredPaths.push_back(decisionPath);
+    totalEntries++;
+}
