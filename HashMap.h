@@ -41,6 +41,9 @@ public:
 
     // Puts all paths into a vector
     void collectVisualData(std::vector<std::pair<std::string, int>>& ans);
+
+    // Returns the total amount of users
+    int  getTotalUsers();
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
