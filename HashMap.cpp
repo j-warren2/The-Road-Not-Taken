@@ -41,3 +41,13 @@ void HashMap::insertDecisionPath(string& decisionPath) {
     allStoredPaths.push_back(decisionPath);
     totalEntries++;
 }
+
+// Checks if a path is stored in the map
+bool HashMap::decisionPathExists(const string& decisionPath){
+    int index= hash(decisionPath);
+    for (const auto& entry : table[index]) {
+        if (entry.first == decisionPath)
+            return true;
+    }
+    return false;
+}
