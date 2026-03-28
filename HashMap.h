@@ -29,10 +29,6 @@ public:
 
     // Removes a path entirely
     void removeDecisionPath(const std::string& decisionPath);
-
-    // Gets all current paths, as well as the amount of users that took each one
-    int getPathCount(const std::string& decisionPath);
-
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
