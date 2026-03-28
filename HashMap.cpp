@@ -178,3 +178,12 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
     cout << "Least similar path: " << leastSimilarPath
          << " (" << lowestScore << " shared choices)\n";
 }
+
+// Puts all paths into a vector
+void HashMap::collectVisualData(vector<pair<string, int>>& ans) {
+    for (auto& bucket : table) {
+        for (auto& entry : bucket) {
+            ans.push_back(entry);
+        }
+    }
+}
