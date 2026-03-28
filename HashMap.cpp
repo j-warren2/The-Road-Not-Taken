@@ -81,3 +81,23 @@ void HashMap::removeDecisionPath(const std::string& decisionPath) {
         }
     }
 }
+
+// Compares paths and scores similarities 
+int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
+    int sharedChoices= 0;
+    // Finds whatever path is shorter so it doesn't go out of range 
+    int shorterLength= min(pathA.length(), pathB.length());
+    // For the entire length of the shorter path
+    for (int i = 0; i < shorterLength; i++) {
+        // If the characters are equal, the number of shared choices increase
+        if (pathA[i] == pathB[i]) {
+            sharedChoices++;
+        }
+
+        // Otherwise, break the loop
+        else {
+            break;
+        }
+    }
+    return sharedChoices;
+}
