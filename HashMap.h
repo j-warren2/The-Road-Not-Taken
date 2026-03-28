@@ -38,6 +38,9 @@ public:
 
     // Finds most and least similar paths
     void findMostAndLeastSimilarPaths(const std::string& currentUserPath);
+
+    // Puts all paths into a vector
+    void collectVisualData(std::vector<std::pair<std::string, int>>& ans);
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
