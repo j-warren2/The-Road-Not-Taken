@@ -35,6 +35,9 @@ public:
 
     // Compares how many stored users made the same choice at each step.
     void printPerChoiceStatistics(const std::string& currentUserPath);
+
+    // Finds most and least similar paths
+    void findMostAndLeastSimilarPaths(const std::string& currentUserPath);
 };
 
 #endif //PROJECT_2_HASHMAP_HASHMAP_H
