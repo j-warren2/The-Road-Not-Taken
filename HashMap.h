@@ -19,16 +19,16 @@ public:
     HashMap(int size = 133000);
 
     // Inserts a decision path onto the map
-    void insert(std::string& key);
+    void insertDecisionPath(std::string& decisionPath);
 
     // Gets the number of users who took a certain path
     int getCount(const std::string& key);
 
     // Removes a path entirely
-    void remove(const std::string& key);
+    void removeDecisionPath(const std::string& decisionPath);
 
     // Gets all current paths, as well as the amount of users that took each one
-    std::vector<std::pair<std::string, int>> getPaths();
+    int getPathCount(const std::string& decisionPath);
 
 };
 
