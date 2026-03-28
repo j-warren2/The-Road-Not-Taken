@@ -1,10 +1,6 @@
-# THE ROAD NOT TAKEN
-## Path 1: Left Passage
-### Team Trie-Hards | COP3530 Project 2
+## Path 1:
 
----
-
-## Scene 1 [SHARED]
+## Scene 1
 
 You wake up on the ground. Cold floor, low light, no memory of how you got here. There's a sound somewhere ahead, it's faint... maybe human? The corridor behind you has already sealed shut. You checked. Twice. Three passages open in front of you. Somewhere in this place is a way out... you just have to find it. Pick a road. You're good at that.
 
