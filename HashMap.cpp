@@ -131,7 +131,7 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 
         // Scan every stored path
         for (const string& stored : allStoredPaths) {
-            if ((int)stored.length() > i && stored[i] == currentUserPath[i]) {
+            if ((int)stored.length() <= i) {
                 continue;
             }
             // Check that preceding choice matches previous node
