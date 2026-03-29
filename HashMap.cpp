@@ -130,7 +130,7 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 
     cout << "\nPer-choice statistics for path: " << currentUserPath << "\n";
 
-    for (int i = 0; i < (int)currentUserPath.length(); i++) {
+    for (int i = 0; i < (int)currentUserPath.lfength(); i++) {
         int matchCount = 0;
 
         // Scan every stored path
@@ -211,7 +211,7 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
     }
 
     // Prints the most similar and least similar
-    cout << "\nMost similar path:  " << mostSimilarPath + 1 << " (" << highestScore << " shared choices)\n";
+    cout << "\nMost similar path:  " << mostSimilarPath << " (" << highestScore+1 << " shared choices)\n";
     cout << "Least similar path: " << leastSimilarPath << " (" << lowestScore << " shared choices)\n";
 }
 
