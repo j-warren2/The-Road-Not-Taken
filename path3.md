@@ -1,4 +1,5 @@
-C- Right passage (C)
+Scene 1
+
 You begin your way down the passage. As you move, you glance behind you, and notice there is now a shut door at the end of the hallway. No turning back. \n
 There is a light at the end of the tunnel though, literally. It becomes brighter and brighter until you eventually step into a room. There’s vegetation, a sky with a bright sun, and even the sounds of birds chirping. But as you explore, you realize that it’s all artificial. The bark of the trees are smooth and cool. You can hear the faint buzzing of artificial lights coming from the painted sky. The birdsong repeats and repeats. Midway through your exploration, you are startled by a harsh, grating sound in the distance.
 
@@ -17,6 +18,7 @@ That did not sound like something nice in the slightest. You rush your way throu
 
 A- Go right
 B- Go left
+
 C- Keep exploring the area (CC)
 You are already midway through, and you aren’t going to stop! You resolutely ignore the screeching sound, keeping up with your detective work. Knocking on every tree, flipping over every stone, leaving nothing unturned. It pays off, though. You eventually discover two trees with strange lines in them, somehow more unnatural than the rest of the fake trees. Pressing against them, they pop open, revealing their hollow cores. One has a ladder down into the depths, the other has a ladder up into the false sky. 
 
