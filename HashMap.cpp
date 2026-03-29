@@ -207,10 +207,8 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
     }
 
     // Prints the most similar and least similar
-    cout << "\nMost similar path:  " << mostSimilarPath
-         << " (" << highestScore << " shared choices)\n";
-    cout << "Least similar path: " << leastSimilarPath
-         << " (" << lowestScore << " shared choices)\n";
+    cout << "\nMost similar path:  " << mostSimilarPath + 1 << " (" << highestScore << " shared choices)\n";
+    cout << "Least similar path: " << leastSimilarPath << " (" << lowestScore << " shared choices)\n";
 }
 
 // Puts all paths into a vector
