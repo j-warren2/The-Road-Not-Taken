@@ -241,6 +241,104 @@ int main() {
         }
     }
 
+    // Path: B
+    else if (choice1 == "B") {
+        cout << "Chapter 2" << endl;
+        cout << "You head towards the middle passage. It's a bit of an awkward fit. As you go further in, you notice that the ceiling appears closer than before. Looking back, you can see that it's been angling downwards ever so slightly since the beginning. There's no point in turning back now, so you continue forwards. By the time you reach the end of the hallway, you are crawling on all fours. There's a torch at the end. You see stairs downwards to the left, and to the right you see just a longer, narrow crawlspace." << endl << endl;
+        cout << "Options" << endl;
+        cout << "A: you go left, down the stairs\nB: you go right, into the crawlspace\nChoice: ";
+        cin >> choice2;
+        userCurrentPath.append(choice2);
+
+        // Path: BA
+        if (choice2 == "A") {
+            cout << "Chapter 3" << endl;
+            cout << "Going towards the stairs is obviously the right choice. You'll have more space as the stairs descend and the ceiling stays the same. No more crawling! You head left and after just a bit more crawling, you are able to stand upright again. You walk down the stairs.\n...\n...\n...\nMan, it sure is a long way down.\n...\n...\n...\nYou wonder where these stairs are heading.\n...\n...\n...\nThese stairs do head somewhere right?\n...\n...\n...\nYou've walked a long way. You can't turn back now.\n...\n...\n...\nYou look up. You don't see a ceiling. Y-You can't see anything there. It's just darkness. You look back up the stairs. There's nothing there. Not even the light from the torch at the crossroads. Maybe you should turn back? It's not too late, right?" << endl << endl;
+            cout << "Options" << endl;
+            cout << "A: go back up the stairs\nB: continue down the stairs\nChoice: ";
+            cin >> choice3;
+            userCurrentPath.append(choice3);
+
+            // Path: BAA
+            if (choice3 == "A") {
+                cout << "Chapter 4" << endl;
+                cout << "You have to head back. Sure you've come down a long way, but there's still time to turn back. There's still time. You turn around and take a step forward. Your foot touches nothing. The stair isn't there. You're falling.\n...\n...\n...\nFalling.\n...\n...\n...\nFalling.\n...\n...\n...\nMore falling.\n...\n...\n...\nEven more falling.\n...\n...\n...\nOh what's that? You're still falling? Great.\n...\n...\n...\nWhat a thrilling adventure.\n...\n...\n...\nYou're still falling.\n...\n...\n...\nThis is fine.\n...\n...\n...\nThis is it, isn't it?\n...\n...\n...\nYeah. This is it." << endl;
+                cout << "\tGAME OVER" << endl << endl;
+                gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+            }
+
+            // Path: BAB
+            else if (choice3 == "B") {
+                cout << "Chapter 4" << endl;
+                cout << "You've come all this way. You can't turn back now. You just can't. You have to go on. There's no way you can stop now. You're too deep into this. You go down the stairs.\n...\n...\n...\nDown the stairs.\n...\n...\n...\nDown the stairs.\n...\n...\n...\nDown more stairs.\n...\n...\n...\nDown even more stairs.\n...\n...\n...\nThere's... still more stairs.\n...\n...\n...\nTh-There has to be an end to this right?\n...\n...\n...\nThis can't be all there is.\n...\n...\n...\nThere can't be more stairs. There shouldn't be more stairs.\n...\n...\n...\nMORE STAIRS\n...\n...\n...\nWHY MORE STAIRS\n...\n...\n...\nIT'S NOT FAIR\n...\n...\n...\nThis is it, isn't it?\n...\n...\n...\nYeah. This is it." << endl;
+                cout << "\tGAME OVER" << endl << endl;
+                gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+            }
+        }
+
+        // Path: BB
+        else if (choice2 == "B") {
+            cout << "Chapter 3" << endl;
+            cout << "You're not sure if the stairs are a good idea. They're going downwards. That can't possibly be good. Yeah. That makes sense. Down is bad. Up is good. The crawlspace isn't exactly up, but it's better than down. You crawl towards the right. After while, you notice that the crawlspace seems to have gotten... smaller. Tighter. That's... That's fine. For now. Yeah, that's fine for now. That's fine, right? Right? RIGHT?!?" << endl << endl;
+            cout << "Options" << endl;
+            cout << "you rush forward\nB: you take a minute to calm down\nChoice: ";
+            cin >> choice3;
+            userCurrentPath.append(choice3);
+
+            // Path: BBA
+            if (choice3 == "A") {
+                cout << "Chapter 4" << endl;
+                cout << "You can't take a break now. You don't know how long you've been here, but you know you need to get out as soon as possible. You start crawling faster through the crawlspace. You can still feel your heart racing as you push through and the space continues to get smaller. You need to hurry. Faster, and faster, and faster, and faSTER, AND FASTER, AND FASTER, AND THERE!\nYou see a light in the distance, coming out of a... ventilation shaft? You crawl towards it faster. As you get closer, you notice an opening in the ceiling. The space above is wider than the crawlspace, and you see rungs to climb upwards." << endl << endl;
+                cout << "Options" << endl;
+                cout << "A: you head towards the light\nB: you head up the ladder\nChoice: ";
+                cin >> choice4;
+                userCurrentPath.append(choice4);
+
+                // Path: BBAA
+                if (choice4 == "A") {
+                    cout << "Chapter 5" << endl;
+                    cout << "You decide to head towards the light. You've struggled all this way, and the end is clearly in sight. You crawl forwards for just a bit more and reach the vent. It's old and rustly, clearly worn out for one reason or the other. You try to peek through it to see what's on the other side, but can't see anything due to the light. You push against the vent with all your strength and it breaks. The light is almost blinding after being in the dark for so long. You close your eyes and squeeze through the vent, and as you crawl out you can feel grass and the heat of the sun on your face. Slowly, your adjust to the light and you can see a flat field of grass and the occasional tree ahead of you." << endl << endl;
+                    cout << "Options" << endl;
+                    cout << "A: you run ahead and don't look back\nB: you look back before running ahead\nChoice: ";
+                    cin >> choice5;
+                    userCurrentPath.append(choice5);
+
+                    // Path: BBAAA
+                    if (choice5 == "A") {
+                        cout << "Chapter 6" << endl;
+                        cout << "You run ahead as fast as you can and don't look back. Whatever that place was, how you got there, it doesn't matter to you. You don't want to know. You just want to be free. You run and run and run until you're gasping for air and fall to your knees. You breathe in and out heavily, but unlike the cramped crawlspace, you feel like you can actually still breathe. It's a relief. It's such a relief to get away. You don't think about that place anymore. Whatever it was. You take a moment to gather your bearings, and then you continue to run away.\nYou're free." << endl;
+                        cout << "\tYOU ESCAPED" << endl << endl;
+                        gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+                     }
+
+                    // Path: BBAAB
+                    else if (choice5 == "B") {
+                        cout << "Chapter 6" << endl;
+                        cout << "You turn around to see what you escaped. The building behind you is tall and black. It looks so out of place in your natural surroundings. Seeing its never-ending height makes you gasp out in disbelief. How is this possible? What is this place? Yet as you continue to look at it, you realize that it doesn't really matter. You look at the building that gave you such terror, and reflect upon the decision you made, think about the choices you didn't make, ponder about what could have been. You are content with where you are and calm against what you have faced. You turn back around and slowly, but surely, move forward. Each step you take is strengthened and calm and filled with purpose.\nYou're free." << endl;
+                        cout << "\tYOU ESCAPED" << endl << endl;
+                        gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+                    }
+                }
+
+                // Path: BBAB
+                else if (choice4 == "B") {
+                    cout << "Chapter 5" << endl;
+                    cout << "You decide to go up the rungs. Finally, you can stand and are less cramped than before. You take a moment to catch your breath. Then, you start climbing up.\n...\n...\n...\nUp the rungs.\n...\n...\n...\nUp the rungs.\n...\n...\n...\nUp the rungs.\n...\n...\n...\nUp even more rungs.\n...\n...\n...\nThere's... still more rungs.\n...\n...\n...\nTh-There has to be an end to this right?\n...\n...\n...\nThis can't be all there is.\n...\n...\n...\nThere can't be more rungs. There shouldn't be more rungs.\n...\n...\n...\nThe exhaustion gets to you. It's too much. You can't do much more. You took a large risk. You thought you could have it all. You thought you could go up. UP, of all things. Your limbs are exhausted. There's only one way to go from here.\nDown." << endl;
+                    cout << "\tGAME OVER" << endl << endl;
+                    gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+                }
+            }
+
+            // Path: BBB
+            else if (choice3 == "B") {
+                cout << "Chapter 4" << endl;
+                cout << "You take a minute to breathe. You can't freak out. It's too tight. You have to be rational. You can't breathe. You MUST calm down. IT'S TOO TIGHT You really should calm down. Deep breath in. Deep breath out. Again. It's fine. Everything is fine. You're okay. Deep breath in. Deep breath out. Again. Good. That's good. That's-\nCREAK\n...That's not good.\nThe crawlspace gives out beneath you. And suddenly you're falling. You're falling...\nYou're. Falling. Down.\nNO.\nYOU CAN'T BE FALLING DOWN.\nDOWN IS BAD.\nDOWN ISN'T RIGHT.\nIT'S NOT RIGHT.\nIT'S NOT FAIR!!!" << endl;
+                cout << "\tGAME OVER" << endl << endl;
+                gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+            }
+        }
+    }
+
     // DEBUGGING STUFF - COMMENT OUT LATER
     // 1. Display Hashmap Results
     cout << "HASHMAP DATA\n";
