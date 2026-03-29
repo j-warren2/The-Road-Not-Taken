@@ -109,7 +109,7 @@ int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
 }
 
 // For each step in the path, counts how many stored users made the same choice at that step
-// O(n * m) time complexity, due to nested for loop
+// O(n * m^2) time complexity, due to nested for loop and checking
 void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 
     // If the map is empty, print error message and return
@@ -132,6 +132,18 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
         // Scan every stored path
         for (const string& stored : allStoredPaths) {
             if ((int)stored.length() > i && stored[i] == currentUserPath[i]) {
+                continue;
+            }
+            // Check that preceding choice matches previous node
+            bool prevMatch= true;
+            for(int j = 0; j<=i;j++) {
+                if(stored[j] != currentUserPath[j]) {
+                    prevMatch= false;
+                    break;
+                }
+            }
+            // If it does, increase match count
+            if(prevMatch) {
                 matchCount++;
             }
         }
