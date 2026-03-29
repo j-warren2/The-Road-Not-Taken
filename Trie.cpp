@@ -108,7 +108,7 @@ void Trie::findMostAndLeastSimilarPaths(const string& currentUserPath) {
         }
     }
 
-    cout << "\nMost similar path:  " << mostSimilarPath << " (" << highestScore << " shared choices)\n";
+    cout << "\nMost similar path:  " << mostSimilarPath << " (" << highestScore + 1 << " shared choices)\n";
     cout << "Least similar path: " << leastSimilarPath << " (" << lowestScore << " shared choices)\n";
 }
 
