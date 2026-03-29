@@ -92,6 +92,23 @@ void generateRandomPlayers(HashMap& hashDatabase, Trie& trieDatabase, int numPla
     }
 }
 
+// Helper function to generate an end sequence.
+void gameEndSequence(HashMap& hashDatabase, Trie& trieDatabase, string playerPath) {
+    hashDatabase.insertDecisionPath(playerPath);
+    trieDatabase.insertDecisionPath(playerPath);
+    
+    cout << "Your choice path was: " << playerPath << endl;
+    cout << "Here's what other players chose to do: " << endl;
+    
+    cout << "\n[HashMap Stats]:";
+    hashDatabase.printPerChoiceStatistics(playerPath);
+
+    cout << "\n[Trie Stats]:";
+    trieDatabase.printPerChoiceStatistics(playerPath);
+
+    cout << "\n\n THANKS FOR PLAYING";
+}
+
 int main() {
     // 1. Initialize your custom HashMap and Trie
     HashMap hashGameStats(1000);
