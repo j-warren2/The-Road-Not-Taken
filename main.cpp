@@ -93,7 +93,6 @@ void generateRandomPlayers(HashMap& hashDatabase, Trie& trieDatabase, int numPla
 }
 
 int main() {
-    int main() {
     // 1. Initialize your custom HashMap and Trie
     HashMap hashGameStats(1000);
     Trie trieGameStats;
@@ -135,5 +134,4 @@ int main() {
     }
 
     return 0;
-}
 }
