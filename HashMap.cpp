@@ -165,29 +165,43 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
         return;
     }
 
-    // Declare variables
-    string mostSimilarPath= "";
-    string leastSimilarPath= "";
-    int highestScore= -1;
-    int lowestScore= (int)currentUserPath.length() + 1;
+    string mostSimilarPath  = "";
+    string leastSimilarPath = "";
+    int highestScore = -1;
+    int lowestScore  = (int)currentUserPath.length() + 1;
+
+    // Track which paths we have already scored to avoid duplicates
+    vector<string> seen;
 
     // Loop through every stored path and compare it to the user's
     for (const string& stored : allStoredPaths) {
-        // Skip if the stored path is the current user's path
-        if (stored == currentUserPath) {
+
+        // Skip the current user's own path
+        if (stored == currentUserPath) continue;
+
+        // Skip if we have already scored this path
+        bool alreadySeen = false;
+        for (const string& s : seen) {
+            if (s == stored) {
+                alreadySeen = true;
+                break;
+            }
+        }
+        if (alreadySeen) {
             continue;
         }
+        seen.push_back(stored);
 
         // Count the shared choices between paths
-        int score= countSharedChoices(currentUserPath, stored);
+        int score = countSharedChoices(currentUserPath, stored);
 
-        // Update the most and least similar paths 
+        // Update the most and least similar paths
         if (score > highestScore) {
-            highestScore= score;
-            mostSimilarPath= stored;
+            highestScore = score;
+            mostSimilarPath = stored;
         }
         if (score < lowestScore) {
-            lowestScore      = score;
+            lowestScore = score;
             leastSimilarPath = stored;
         }
     }
