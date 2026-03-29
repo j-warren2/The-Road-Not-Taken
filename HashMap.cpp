@@ -12,7 +12,7 @@ HashMap::HashMap(int size) {
 }
 
 // Converts inputted path into a value to store onto the table
-// O(n) time complexity, due to loop
+// O(m) time complexity, due to loop
 int HashMap::hash(const std::string& key)const {
     int value= 0;
     for(char c : key) {
@@ -22,7 +22,7 @@ int HashMap::hash(const std::string& key)const {
 }
 
 // Insertion Function
-// O(n + k) time complexity, due to hashing and loop
+// O(m + k) time complexity, due to hashing and loop
 void HashMap::insertDecisionPath(string& decisionPath) {
     int index = hash(decisionPath);
     for (auto& entry : table[index]) {
@@ -45,7 +45,7 @@ void HashMap::insertDecisionPath(string& decisionPath) {
 }
 
 // Checks if a path is stored in the map
-// O(n + k) time complexity, due to hashing and loop
+// O(m + k) time complexity, due to hashing and loop
 bool HashMap::decisionPathExists(const string& decisionPath){
     int index= hash(decisionPath);
     for (const auto& entry : table[index]) {
@@ -56,7 +56,7 @@ bool HashMap::decisionPathExists(const string& decisionPath){
 }
 
 // Returns how many users took a path
-// O(n + k) time complexity, due to hashing and loop
+// O(m + k) time complexity, due to hashing and loop
 int HashMap::getPathCount(const string& decisionPath) {
     int index= hash(decisionPath);
     for (const auto& entry : table[index]) {
@@ -69,7 +69,7 @@ int HashMap::getPathCount(const string& decisionPath) {
 }
 
 // Removes path from the map
-// O(n + k) time complexity, due to hashing and loop
+// O(m + k) time complexity, due to hashing and loop
 void HashMap::removeDecisionPath(const std::string& decisionPath) {
     int index= hash(decisionPath);
     auto& link= table[index];
@@ -88,7 +88,7 @@ void HashMap::removeDecisionPath(const std::string& decisionPath) {
 }
 
 // Compares paths and scores similarities 
-// O(n) time complexity, due to loop
+// O(m) time complexity, due to loop
 int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
     int sharedChoices= 0;
     // Finds whatever path is shorter so it doesn't go out of range 
@@ -200,7 +200,7 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
 }
 
 // Puts all paths into a vector
-// O(n + k) time complexity, due to nested for loops but not running completely through every time
+// O(n + t) time complexity, due to nested for loops but not running completely through every time
 void HashMap::collectVisualData(vector<pair<string, int>>& ans) {
     for (auto& bucket : table) {
         for (auto& entry : bucket) {
