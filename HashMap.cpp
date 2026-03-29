@@ -1,7 +1,3 @@
-// References:
-// https://www.geeksforgeeks.org/cpp/how-to-use-hashmap-in-cpp/
-// https://www.geeksforgeeks.org/dsa/separate-chaining-collision-handling-technique-in-hashing/
-
 #include "HashMap.h"
 #include <iostream>
 #include <stdexcept>
@@ -91,11 +87,11 @@ void HashMap::removeDecisionPath(const std::string& decisionPath) {
     }
 }
 
-// Compares paths and scores similarities 
+// Compares paths and scores similarities
 // O(m) time complexity, due to loop
 int HashMap::countSharedChoices(const string& pathA, const string& pathB) {
     int sharedChoices= 0;
-    // Finds whatever path is shorter so it doesn't go out of range 
+    // Finds whatever path is shorter so it doesn't go out of range
     int shorterLength= min(pathA.length(), pathB.length());
     // For the entire length of the shorter path
     for (int i = 0; i < shorterLength; i++) {
@@ -130,7 +126,7 @@ void HashMap::printPerChoiceStatistics(const string& currentUserPath) {
 
     cout << "\nPer-choice statistics for path: " << currentUserPath << "\n";
 
-    for (int i = 0; i < (int)currentUserPath.lfength(); i++) {
+    for (int i = 0; i < (int)currentUserPath.length(); i++) {
         int matchCount = 0;
 
         // Scan every stored path
@@ -211,8 +207,10 @@ void HashMap::findMostAndLeastSimilarPaths(const string& currentUserPath) {
     }
 
     // Prints the most similar and least similar
-    cout << "\nMost similar path:  " << mostSimilarPath << " (" << highestScore+1 << " shared choices)\n";
-    cout << "Least similar path: " << leastSimilarPath << " (" << lowestScore << " shared choices)\n";
+    cout << "\nMost similar path:  " << mostSimilarPath
+         << " (" << highestScore+1 << " shared choices)\n";
+    cout << "Least similar path: " << leastSimilarPath
+         << " (" << lowestScore << " shared choices)\n";
 }
 
 // Puts all paths into a vector
