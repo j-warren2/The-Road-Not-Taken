@@ -93,6 +93,47 @@ void generateRandomPlayers(HashMap& hashDatabase, Trie& trieDatabase, int numPla
 }
 
 int main() {
-    // Outer Key: Player ID | Inner Key: Chapter | Inner Value: Choice Made
-    map<string, map<string, string>> gameDatabase;
+    int main() {
+    // 1. Initialize your custom HashMap and Trie
+    HashMap hashGameStats(1000);
+    Trie trieGameStats;
+
+    // 2. Generate 10 random players
+    generateRandomPlayers(hashGameStats, trieGameStats, 10);
+
+    // DEBUGGING STUFF - COMMENT OUT LATER
+    // 1. Display Hashmap Results
+    cout << "HASHMAP DATA\n";
+    vector<pair<string, int>> hashData;
+    hashGameStats.collectVisualData(hashData);
+    for (const auto& entry : hashData) {
+        cout << "Path [" << entry.first << "]: " << entry.second << " users\n";
+    }
+
+    // 2. Display Trie Results
+    // Note: Trie uses PathNode struct (pathSoFar, usersPassedThrough)
+    cout << "\nTRIE DATA (Prefix Tree)\n";
+    vector<PathNode> trieData;
+    trieGameStats.collectVisualData(trieData);
+    for (const auto& node : trieData) {
+        // This will print every prefix/node in the tree
+        if (!node.pathSoFar.empty()) {
+            cout << "Node [" << node.pathSoFar << "]: " << node.usersPassedThrough << " users passed through\n";
+        }
+    }
+
+    // 3. Compare Stats for a specific path
+    if (!hashData.empty()) {
+        string testPath = "BAA";
+        cout << "\n\tComparison for Path: " << testPath << "\n";
+        
+        cout << "\n[HashMap Stats]:";
+        hashGameStats.printPerChoiceStatistics(testPath);
+        
+        cout << "\n[Trie Stats]:";
+        trieGameStats.printPerChoiceStatistics(testPath);
+    }
+
+    return 0;
+}
 }
