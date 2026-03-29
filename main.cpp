@@ -339,6 +339,13 @@ int main() {
         }
     }
 
+    else if (choice1 == "C") {
+        cout << "Chapter 2" << endl;
+        cout << "What are you doing? Are you blind? That path clearly has a sign saying under construction! You are truly unbelievable. In fact, you are bonked in the back of your head." << endl << endl;
+        cout << "\tGAME OVER" << endl << endl;
+        gameEndSequence(hashGameStats, trieGameStats, userCurrentPath);
+    }
+
     // DEBUGGING STUFF - COMMENT OUT LATER
     // 1. Display Hashmap Results
     cout << "HASHMAP DATA\n";
