@@ -25,4 +25,4 @@ g++ -std=c++17 -o game main.cpp Trie.cpp HashMap.cpp
 
 ## Video
 
-[YouTube link TBD]
+https://www.youtube.com/watch?v=bMMdfrRGUNM
