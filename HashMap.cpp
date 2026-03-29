@@ -1,3 +1,7 @@
+// References:
+// https://www.geeksforgeeks.org/cpp/how-to-use-hashmap-in-cpp/
+// https://www.geeksforgeeks.org/dsa/separate-chaining-collision-handling-technique-in-hashing/
+
 #include "HashMap.h"
 #include <iostream>
 #include <stdexcept>
