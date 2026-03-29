@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include <map>
+#include "HashMap.h"
+#include "Trie.h"
 using namespace std;
 
 // Helper function to handle user choices.
@@ -41,6 +42,54 @@ string getRandomChoice(int numOptions) {
     char randomChoice = 'A' + randomNumber;
 
     return string(1, randomChoice);
+}
+
+// Function to generate random players.
+void generateRandomPlayers(HashMap& hashDatabase, Trie& trieDatabase, int numPlayers) {
+    for (int i = 1; i <= numPlayers; ++i) {
+        string currentPath = "";
+
+        // Scene 1
+        string s1 = getRandomChoice(3);
+        currentPath += s1;
+        if (currentPath == "C") {
+            hashDatabase.insertDecisionPath(currentPath);
+            trieDatabase.insertDecisionPath(currentPath);
+            continue;
+        }
+
+        // Scene 2
+        string s2 = getRandomChoice(2);
+        currentPath += s2;
+
+        // Scene 3
+        currentPath += getRandomChoice(2);
+        if (currentPath == "AAA" || currentPath == "ABB" || currentPath == "BAA" || currentPath == "BAB" || currentPath == "BBB") {
+            hashDatabase.insertDecisionPath(currentPath);
+            trieDatabase.insertDecisionPath(currentPath);
+            continue;
+        }
+
+        // Scene 4
+        currentPath += getRandomChoice(2);
+        if (currentPath == "AABA" || currentPath == "ABAA" || currentPath == "ABAB" || currentPath == "BBAB") {
+            hashDatabase.insertDecisionPath(currentPath);
+            trieDatabase.insertDecisionPath(currentPath);
+            continue;
+        }
+
+        // Scene 5
+        currentPath += getRandomChoice(2);
+        if (currentPath == "AABBA" || currentPath == "AABBB" || currentPath == "BBAAA" || currentPath == "BBAAB") {
+            hashDatabase.insertDecisionPath(currentPath);
+            trieDatabase.insertDecisionPath(currentPath);
+            continue;
+        }
+
+        // 3. Insert into both
+        hashDatabase.insertDecisionPath(currentPath);
+        trieDatabase.insertDecisionPath(currentPath);
+    }
 }
 
 int main() {
